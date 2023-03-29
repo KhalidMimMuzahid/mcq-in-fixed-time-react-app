@@ -8,6 +8,8 @@ const QuizRight = ({
   datas,
   isMarkedQuizId,
   setIsMarkedQuizId,
+  chosenAnswers,
+  setChosenAnswers,
 }) => {
   const handelNextClick = () => {
     if (datas?.length > selectedQuiz?.id) {
@@ -37,6 +39,16 @@ const QuizRight = ({
       setIsMarkedQuizId(newIsMarkedQuizId);
     }
   };
+  const handleReset = () => {
+    // todo for   re-clicked
+    // console.log("re-clicked");
+    let newChosenAnswers = chosenAnswers.filter(
+      (eachAnswer) => eachAnswer?.questionId !== selectedQuiz?.id
+    );
+
+    setChosenAnswers(newChosenAnswers);
+  };
+
   return (
     <div className="border border-white">
       {/* mark div */}
@@ -52,7 +64,10 @@ const QuizRight = ({
       {/* {console.log(currentIndex)} */}
 
       {/* reset div */}
-      <div className="border border-white mx-28 my-5 p-3 rounded-xl cursor-pointer hover:bg-slate-200 hover:text-black font-semibold text-lg">
+      <div
+        onClick={handleReset}
+        className="border border-white mx-28 my-5 p-3 rounded-xl cursor-pointer hover:bg-slate-200 hover:text-black font-semibold text-lg"
+      >
         <p>Reset</p>
       </div>
 

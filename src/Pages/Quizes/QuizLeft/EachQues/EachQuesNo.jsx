@@ -5,10 +5,19 @@ const EachQuesNo = ({
   seenQuizId,
   checkedQuizId = { checkedQuizId },
   isMarkedQuizId,
+  selectedQuiz,
   setSeenQuizId,
   bgColor,
   data,
 }) => {
+  const [isSelected, setIsSelected] = useState(false);
+  useEffect(() => {
+    if (selectedQuiz?.id === data?.id) {
+      setIsSelected(true);
+    } else {
+      setIsSelected(false);
+    }
+  }, [selectedQuiz, data]);
   const [quizStatus, setQuizStatus] = useState("unSeenUnMarked");
   //   seenUnMarked
   //   seenMarked
@@ -58,7 +67,9 @@ const EachQuesNo = ({
       }}
       className={`${
         seenQuizId.findIndex((j) => j === data?.id) !== -1 && bgColor
-      }  text-black border border-white rounded-xl cursor-pointer ${quizStatus}`}
+      }  text-black border border-white cursor-pointer ${quizStatus} ${
+        isSelected && "border-4 border-black"
+      }`}
     >
       {/* <p key={i} className='border border-white flex flex-col'> */}
       {data?.id}

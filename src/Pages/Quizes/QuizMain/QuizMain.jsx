@@ -3,12 +3,11 @@ import EachOption from "./EachOption/EachOption";
 
 const QuizMain = ({
   selectedQuiz,
-  setCorrectAnsCount,
   checkedQuizId,
   setcheckedQuizId,
+  chosenAnswers,
+  setChosenAnswers,
 }) => {
-  const [chosenAnswers, setChosenAnswers] = useState([]);
-
   const handelSelect = (option) => {
     // console.log(option);
     const isCorrect = selectedQuiz?.correctAnswer === option;
