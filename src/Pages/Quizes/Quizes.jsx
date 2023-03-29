@@ -15,6 +15,7 @@ const Quizes = () => {
   const [submitModalIsOpen, setSubmitModalIsOpen] = useState(false);
   const [submitResultModalIsOpen, setSubmitResultModalIsOpen] = useState(false);
   const [resultScore, setResultScore] = useState({});
+  const [restartByChangingValue, setRestartByChangingValue] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
     fetch("/datas.json")
@@ -67,11 +68,13 @@ const Quizes = () => {
     setResultScore({});
     setSelectedQuiz(datas[0]);
     setSeenQuizId([datas[0].id]);
+    setRestartByChangingValue((prev) => prev + 1);
     // navigate("/");
   };
   return (
     <div className="grid grid-cols-4 gap-1">
       <QuizLeft
+        restartByChangingValue={restartByChangingValue}
         handleQuizSubmit={handleQuizSubmit}
         checkedQuizId={checkedQuizId}
         datas={datas}

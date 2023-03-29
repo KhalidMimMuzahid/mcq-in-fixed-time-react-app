@@ -11,6 +11,7 @@ const QuizLeft = ({
   checkedQuizId,
   isMarkedQuizId,
   handleQuizSubmit,
+  restartByChangingValue,
 }) => {
   const [remainingTime, setRemainingTime] = useState(25 * 60);
   const children = (remainingTime) => {
@@ -19,9 +20,10 @@ const QuizLeft = ({
   return (
     <div className="mt-4">
       {/* 1st portion */}
-      <h3 className="text-orange-500 font-bold text-3xl">Time Left</h3>
+      <h3 className="text-black font-bold text-3xl">Time Left</h3>
       <div className="flex justify-center items-center mt-3">
         <CountdownCircleTimer
+          key={restartByChangingValue}
           isPlaying
           duration={25 * 30}
           colors="#A30000"
@@ -51,7 +53,7 @@ const QuizLeft = ({
         <label
           onClick={() => handleQuizSubmit(remainingTime)}
           htmlFor="confirm-submit-modal"
-          className=" font-bold mx-12  bg-slate-600 text-white px-12 py-4 rounded-3xl hover:bg-slate-800 hover:cursor-pointer"
+          className=" font-bold mx-12  bg-slate-700 text-white px-12 py-4 rounded-3xl hover:bg-slate-900 hover:cursor-pointer"
         >
           Finish Test
         </label>

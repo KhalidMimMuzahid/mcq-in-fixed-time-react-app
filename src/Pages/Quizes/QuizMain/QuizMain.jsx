@@ -48,7 +48,7 @@ const QuizMain = ({
 
   return (
     <div className="border-l border-white h-screen col-span-2 pt-4">
-      <h1 className="text-orange-500 font-bold text-3xl ">Question</h1>
+      <h1 className="text-black font-bold text-4xl ">Question</h1>
       <h3 className="text-xl p-3 font-semibold mt-3">
         {selectedQuiz?.id}
         {`. `} {selectedQuiz?.question.slice(3, -4)}

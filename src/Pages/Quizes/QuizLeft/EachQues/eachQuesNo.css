@@ -1,5 +1,5 @@
 .unSeenUnMarked {
-  background-color: beige;
+  background-color: rgb(240, 240, 217);
 }
 .checkedMarked {
   background-color: rgb(11, 221, 4);
@@ -9,9 +9,9 @@
   background-color: rgb(11, 221, 4);
 }
 .seenMarked {
-  background-color: rgb(246, 205, 22);
+  background-color: rgb(231, 55, 152);
   border-right: 20px solid black;
 }
 .seenUnMarked {
-  background-color: rgb(246, 205, 22);
+  background-color: rgb(231, 55, 152);
 }
