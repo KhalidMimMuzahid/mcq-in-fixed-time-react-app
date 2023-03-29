@@ -1,0 +1,17 @@
+.unSeenUnMarked {
+  background-color: beige;
+}
+.checkedMarked {
+  background-color: rgb(11, 221, 4);
+  border-right: 20px solid black;
+}
+.checkedUnMarked {
+  background-color: rgb(11, 221, 4);
+}
+.seenMarked {
+  background-color: rgb(246, 205, 22);
+  border-right: 20px solid black;
+}
+.seenUnMarked {
+  background-color: rgb(246, 205, 22);
+}

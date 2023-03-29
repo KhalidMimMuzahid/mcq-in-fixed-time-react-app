@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Pages/Home/Home";
-import Quizes from "./Pages/Home/Quizes/Quizes";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Quizes from "./Pages/Quizes/Quizes";
 
 function App() {
   const router = createBrowserRouter([
