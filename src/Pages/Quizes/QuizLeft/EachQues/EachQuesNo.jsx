@@ -25,6 +25,14 @@ const EachQuesNo = ({
     }
   };
   useEffect(() => {
+    // console.log(
+    //   "seenQuizId: ",
+    //   seenQuizId,
+    //   "\ncheckedQuizId: ",
+    //   checkedQuizId,
+    //   "\nisMarkedQuizId: ",
+    //   isMarkedQuizId
+    // );
     if (checkedQuizId.indexOf(data?.id) !== -1) {
       if (isMarkedQuizId.indexOf(data?.id) !== -1) {
         setQuizStatus("checkedMarked");

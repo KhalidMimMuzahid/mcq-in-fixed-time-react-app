@@ -17,8 +17,8 @@ const QuizRight = ({
       setSelectedQuiz(newSelectedQuiz);
     }
 
-    if (seenQuizId.findIndex((j) => j === selectedQuiz?.id) === -1) {
-      const newseenQuizId = [...seenQuizId, selectedQuiz?.id];
+    if (seenQuizId.findIndex((j) => j === selectedQuiz?.id + 1) === -1) {
+      const newseenQuizId = [...seenQuizId, selectedQuiz?.id + 1];
       setSeenQuizId(newseenQuizId);
     }
   };

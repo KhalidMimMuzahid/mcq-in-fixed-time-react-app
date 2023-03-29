@@ -16,8 +16,10 @@ const Quizes = () => {
     fetch("/datas.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setDatas(data?.questions);
+        setSelectedQuiz(data?.questions[0]);
+        setSeenQuizId([data?.questions[0].id]);
       });
   }, []);
 
